@@ -1,4 +1,4 @@
-# Agenda Digital de Dragonas
+Agenda Dragonas
 
 ##  Descripción
 
@@ -117,20 +117,6 @@ agenda-dragonas/
 ```
 
 ## Configuración
-
-### Variables de Entorno
-
-#### Backend (.env)
-```env
-NODE_ENV=production
-PORT=5000
-DB_HOST=host.docker.internal
-DB_PORT=3306
-DB_NAME=Agenda
-DB_USER=root
-DB_PASSWORD=
-JWT_SECRET=DAW2025
-CORS_ORIGIN=http://localhost:5173
   
 ```
 
@@ -251,4 +237,8 @@ Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para más detal
 <div align="center">
   <strong>Hecho con ❤️ para la comunidad de Dragonas</strong>
 </div>
+
+=======
+# agenda-dragonas
+Agenda digital oncológica para Dragonas
 
