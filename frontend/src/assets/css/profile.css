@@ -1,0 +1,102 @@
+/* Estilos para la página de perfil - Agenda de Dragonas */
+
+/* Variables de colores */
+:root {
+  --primary-color: #ff6b9d;
+  --primary-light: #fff0f5;
+  --primary-dark: #d84c7b;
+  --success-color: #20c997;
+  --success-light: #e8f8f5;
+  --warning-color: #ffc107;
+  --warning-light: #fff8e6;
+  --danger-color: #dc3545;
+  --danger-light: #ffeaec;
+  --info-color: #0dcaf0;
+  --info-light: #e8f8fc;
+}
+
+/* Estilos generales */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Avatar y placeholder */
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.doctor-avatar .avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  font-size: 1.25rem;
+}
+
+/* Navegación del perfil */
+.profile-nav {
+  margin-top: 1rem;
+}
+
+.profile-nav-item {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.profile-nav-item:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.profile-nav-item.active {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Formularios */
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(255, 107, 157, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .sticky-top {
+    position: relative;
+    top: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Importar estilos*/
+@import './ask-doctor.css';
+@import url('./doctor-panel.css');
+@import url('./donation.css');

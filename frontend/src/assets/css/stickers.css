@@ -1,0 +1,119 @@
+.sticker-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.sticker-category {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.sticker-category h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.sticker-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sticker-item {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticker-item img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.sticker-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sticker-canvas {
+  position: relative;
+  min-height: 400px;
+  background-color: white;
+  border: 2px dashed var(--secondary-color);
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.placed-sticker {
+  position: absolute;
+  cursor: move;
+  user-select: none;
+}
+
+.placed-sticker img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.sticker-controls {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.placed-sticker:hover .sticker-controls {
+  opacity: 1;
+}
+
+.sticker-control-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--dark-color);
+  transition: all 0.2s ease;
+}
+
+.sticker-control-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .sticker-item {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .sticker-canvas {
+    min-height: 300px;
+  }
+}

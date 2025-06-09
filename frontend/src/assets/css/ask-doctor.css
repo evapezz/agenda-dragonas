@@ -1,0 +1,72 @@
+/* Estilos para el componente AskDoctor - Agenda de Dragonas */
+
+.ask-doctor-component {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para las tarjetas de preguntas */
+.question-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 10px;
+}
+
+.question-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+.question-card.unanswered {
+  border-left: 3px solid var(--warning-color, #ffc107);
+}
+
+/* Contenedor de preguntas y respuestas en el modal */
+.question-container, .answer-container {
+  margin-bottom: 1.5rem;
+}
+
+.border-left-primary {
+  border-left: 3px solid var(--primary-color, #ff6b9d);
+}
+
+/* Estilos para el historial de preguntas */
+.questions-history {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.questions-history::-webkit-scrollbar {
+  width: 6px;
+}
+
+.questions-history::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.questions-history::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.questions-history::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+/* Animaciones */
+.question-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .questions-history {
+    max-height: 400px;
+  }
+}

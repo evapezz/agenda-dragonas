@@ -1,0 +1,747 @@
+/* Estilos principales de la aplicación */
+
+
+:root {
+  --primary-color: #ff6b9d;
+  --secondary-color: #9d4edd;
+  --accent-color: #ffd6e0;
+  --text-color: #2d3436;
+  --light-color: #f8f9fa;
+  --dark-color: #393e46;
+  --danger-color: #ff5252;
+  --success-color: #6bd490;
+  --warning-color: #ffbe76;
+  --info-color: #74b9ff;
+  --gradient-primary: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+  --gradient-secondary: linear-gradient(135deg, #9d4edd 0%, #c77dff 100%);
+  --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  background-image: url('/assets/images/subtle-pattern.png');
+  background-repeat: repeat;
+}
+
+/* Estilos generales */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+}
+
+.login-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.login-container {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.login-container .form-control {
+  border-radius: 30px;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.login-container .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(255, 107, 157, 0.25);
+}
+
+/* Personalización de Bootstrap */
+.btn {
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(135deg, #ff5a8c 0%, #ff7a9b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 107, 157, 0.5);
+}
+
+.btn-secondary {
+  background: var(--gradient-secondary);
+  border: none;
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background: linear-gradient(135deg, #8e3dcb 0%, #b86cf9 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(157, 78, 221, 0.5);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Estilos para el header */
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  transition: all var(--transition-speed) ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-color);
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Estilos para el footer */
+footer {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 2rem 0 1rem;
+}
+
+footer .social-links {
+  margin-bottom: 1rem;
+}
+
+footer .footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-speed) ease;
+}
+
+footer .footer-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* Estilos para las tarjetas */
+.card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card-img-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+/* Estilos para el dashboard */
+.welcome-banner {
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-image: url('/assets/images/pattern.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  opacity: 0.2;
+}
+
+.dashboard-card {
+  height: 100%;
+  min-height: 220px;
+  padding: 1.5rem;
+}
+
+.dashboard-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  color: var(--primary-color);
+  background: rgba(255, 107, 157, 0.1);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.dashboard-card .card-title {
+  font-size: 1.25rem;
+}
+
+.feature-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Estilos para el calendario */
+.calendar-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-day {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.calendar-day:hover {
+  background-color: var(--accent-color);
+}
+
+.calendar-day.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.calendar-day.has-event::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+/* Estilos para el registro de síntomas */
+.symptom-tracker {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.symptom-card {
+  border-left: 4px solid var(--primary-color);
+  background-color: rgba(255, 107, 157, 0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.symptom-date {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.symptom-intensity {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.intensity-low {
+  background-color: rgba(107, 212, 144, 0.2);
+  color: #2a9d5f;
+}
+
+.intensity-medium {
+  background-color: rgba(255, 190, 118, 0.2);
+  color: #d68910;
+}
+
+.intensity-high {
+  background-color: rgba(255, 82, 82, 0.2);
+  color: #c0392b;
+}
+
+/* Estilos para el espacio motivacional */
+.motivational-space {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.quote-card {
+  background: linear-gradient(135deg, #ffd6e0 0%, #ffeff4 100%);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.quote-card::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 5rem;
+  font-family: Georgia, serif;
+  color: rgba(255, 107, 157, 0.2);
+  line-height: 1;
+}
+
+.blockquote {
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.blockquote-footer {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.achievement-item, .gratitude-item {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+.achievement-icon, .gratitude-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.achievement-icon {
+  background-color: rgba(107, 212, 144, 0.2);
+  color: #2a9d5f;
+}
+
+.gratitude-icon {
+  background-color: rgba(255, 107, 157, 0.2);
+  color: var(--primary-color);
+}
+
+/* Estilos para las pegatinas */
+.sticker-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.sticker-item {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sticker-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.sticker-canvas {
+  position: relative;
+  min-height: 400px;
+  background-color: white;
+  border: 2px dashed var(--accent-color);
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+  padding: 1.5rem;
+}
+
+.placed-sticker {
+  position: absolute;
+  cursor: move;
+  transition: transform 0.2s ease;
+}
+
+.placed-sticker:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para la galería de fotos */
+.photo-gallery {
+  margin-bottom: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform var(--transition-speed) ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  padding: 1rem;
+  color: white;
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.add-photo {
+  height: 200px;
+  border: 2px dashed var(--accent-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.add-photo:hover {
+  background-color: rgba(255, 107, 157, 0.05);
+  border-color: var(--primary-color);
+}
+
+.add-photo-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+/* Estilos para el panel de médicos */
+.doctor-panel {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.patient-card {
+  border-left: 4px solid var(--primary-color);
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-speed) ease;
+}
+
+.patient-card:hover {
+  transform: translateX(5px);
+}
+
+.patient-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.patient-info {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Estilos para los enlaces sociales */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: var(--dark-color);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon:hover {
+  color: white;
+  transform: translateY(-3px);
+}
+
+.social-icon.facebook:hover {
+  background-color: #3b5998;
+}
+
+.social-icon.twitter:hover {
+  background-color: #1da1f2;
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icon.youtube:hover {
+  background-color: #ff0000;
+}
+
+/* Componentes personalizados */
+.progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  margin: 0 auto 1rem;
+}
+
+.progress-circle-fill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.progress-circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color) 0% var(--progress), transparent var(--progress) 100%);
+}
+
+.badge-custom {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background-color: rgba(255, 107, 157, 0.2);
+  color: var(--primary-color);
+}
+
+.badge-secondary {
+  background-color: rgba(157, 78, 221, 0.2);
+  color: var(--secondary-color);
+}
+
+.badge-success {
+  background-color: rgba(107, 212, 144, 0.2);
+  color: #2a9d5f;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Estilos responsive */
+@media (max-width: 992px) {
+  .welcome-banner {
+    padding: 1.5rem;
+  }
+  
+  .welcome-banner::before {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .sticker-item {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .gallery-img {
+    height: 180px;
+  }
+  
+  .add-photo {
+    height: 180px;
+  }
+  
+  .welcome-banner::before {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .dashboard-icon {
+    font-size: 2rem;
+    padding: 0.75rem;
+  }
+  
+  .sticker-item {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .gallery-img {
+    height: 160px;
+  }
+  
+  .add-photo {
+    height: 160px;
+  }
+  
+  .blockquote {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Importación de estilos de donación */
+
+
+

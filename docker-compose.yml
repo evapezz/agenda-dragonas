@@ -1,0 +1,76 @@
+
+
+services:
+  # MySQL en Docker
+  mysql:
+    image: mysql:8.0
+    container_name: agenda-dragonas-db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"       
+    environment:
+      MYSQL_ROOT_PASSWORD: Dragonas
+      MYSQL_DATABASE: Agenda
+      MYSQL_USER: Eva
+      MYSQL_PASSWORD: Dragonas
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - agenda-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: agenda-dragonas-api
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+
+      DB_DIALECT: mysql
+      DB_HOST: mysql      # nombre del servicio Docker
+      DB_PORT: 3306       # puerto interno del contenedor
+      DB_USER: Eva
+      DB_PASSWORD: Dragonas
+      DB_NAME: Agenda
+
+      JWT_SECRET: DAW2025_super_secure_jwt_secret_key
+      CORS_ORIGIN: http://localhost:5173
+      FRONTEND_URL: http://localhost:5173
+    depends_on:
+      - mysql
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/logs:/app/logs
+    networks:
+      - agenda-network
+
+  # Frontend React
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: agenda-dragonas-web
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    environment:
+      VITE_API_URL: http://localhost:5000/api
+      VITE_APP_NAME: Agenda Digital Dragonas
+      VITE_APP_VERSION: 2.0.0
+    depends_on:
+      - backend
+    networks:
+      - agenda-network
+
+volumes:
+  mysql_data:
+
+networks:
+  agenda-network:
+    driver: bridge

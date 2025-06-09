@@ -1,0 +1,104 @@
+/* Estilos adicionales para el componente de donación */
+
+/* Estilos para el botón de donación */
+.donation-button {
+  transition: all 0.3s ease;
+}
+
+.donation-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
+/* Estilos para las tarjetas de método de donación */
+.donation-methods {
+  margin-bottom: 1.5rem;
+}
+
+.donation-method-card {
+  border: 2px solid #e9ecef;
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.donation-method-card:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(255, 107, 157, 0.05);
+}
+
+.donation-method-card.active {
+  border-color: var(--primary-color);
+  background-color: rgba(255, 107, 157, 0.1);
+}
+
+.donation-method-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+/* Estilos para la información de donación */
+.bizum-info, .transfer-info {
+  background-color: rgba(255, 107, 157, 0.05);
+  border-color: var(--primary-color) !important;
+  border-radius: var(--border-radius);
+}
+
+.bizum-number {
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+/* Animación para el botón de donación en el dashboard */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 107, 157, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 157, 0);
+  }
+}
+
+.dashboard .donation-button {
+  animation: pulse 2s infinite;
+}
+
+/* Estilos responsive para el componente de donación */
+@media (max-width: 768px) {
+  .donation-method-card {
+    padding: 1rem 0.75rem;
+  }
+  
+  .donation-method-icon {
+    font-size: 1.75rem;
+  }
+  
+  .bizum-number {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .donation-methods .row {
+    margin: 0 -5px;
+  }
+  
+  .donation-methods .col-6 {
+    padding: 0 5px;
+  }
+  
+  .donation-method-card {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .donation-method-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
