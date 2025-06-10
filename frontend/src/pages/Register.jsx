@@ -43,7 +43,7 @@ const Register = () => {
         email,
         password,
         name,
-        lastName
+        last_Name: lastName
       });
 
       // Si no es OK, api arroja excepción; si llega aquí, fue 201

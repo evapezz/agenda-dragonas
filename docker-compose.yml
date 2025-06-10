@@ -33,8 +33,8 @@ services:
       PORT: 5000
 
       DB_DIALECT: mysql
-      DB_HOST: mysql      # nombre del servicio Docker
-      DB_PORT: 3306       # puerto interno del contenedor
+      DB_HOST: mysql      
+      DB_PORT: 3306       
       DB_USER: Eva
       DB_PASSWORD: Dragonas
       DB_NAME: Agenda

@@ -2,15 +2,15 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME,      // ej. “Agenda”
-  process.env.DB_USER,      // ej. “root” o “Eva”
-  process.env.DB_PASSWORD,  // puede quedar vacío
+  process.env.DB_NAME,      
+  process.env.DB_USER,      
+  process.env.DB_PASSWORD,  
   {
-    host: process.env.DB_HOST,      // ej. “127.0.0.1” o “mysql”
+    host: process.env.DB_HOST,      
     port: process.env.DB_PORT || 3306,
     dialect: process.env.DB_DIALECT || 'mysql',
     define: {
-      underscored: true,     // usa created_at / updated_at
+      underscored: true,     
       timestamps: true
     },
     logging: false
@@ -20,7 +20,7 @@ const sequelize = new Sequelize(
 const testConnection = async () => {
   try {
     await sequelize.authenticate();
-    console.log('✅ Conexión a MYSQL establecida correctamente');
+    console.log(' Conexión a MYSQL establecida correctamente');
     return true;
   } catch (err) {
     console.error(' No se pudo conectar a MYSQL:', err.message);
